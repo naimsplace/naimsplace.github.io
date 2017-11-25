@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Naim al-Gharib (mail@naimsplace.com)" />
+  <title>Optimal</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  @charset "utf-8";
+  body {
+      font-family:"Garamond";
+      font-size: 120%;
+  }
+  
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+      color:black;
+      text-decoration:none;
+  }
+  
+  hr {
+  	display:none;
+  }
+  
+  tbody, tr, td {
+  	border:0;
+  }
+  
+  table {
+  	border:1px solid #555;
+  }
+  
+  th {
+  	border:1px solid #888;
+  	background-color:#eee;
+  }
+  
+  td {
+  	border:1px dotted #999;
+  }
+  
+  pre {
+  	text-align:left;
+  	margin:0 auto;
+  	border:1px solid #94DA3A;
+  	padding:5px;
+  	width:90%;
+  	background-color:#e7ffc7;
+  	font-size:80%;
+  	font-family:Tahoma, "Bitstream Vera Sans", "DejaVu Sans", Verdana, Geneva, Arial, Sans-serif;
+  	white-space: pre-wrap;       /* css-3 */
+  	white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+  	white-space: -pre-wrap;      /* Opera 4-6 */
+  	white-space: -o-pre-wrap;    /* Opera 7 */
+  	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  }
+  </style>
+</head>
+<body>
+<header>
+<h1 class="title">Optimal</h1>
+<p class="author">Naim al-Gharib (mail@naimsplace.com)</p>
+<p class="date">Version: 1.0<br><span style='font-size:small;'>Oprettet: 12-09-2017<br>Sidst opdateret: 25-11-2017</span></p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#indledning">Indledning</a></li>
+<li><a href="#tænkning-og-opfattelser">Tænkning og opfattelser</a></li>
+<li><a href="#metoden">Metoden</a></li>
+<li><a href="#identifikation-af-ønsker-og-begrænsninger">Identifikation af ønsker og begrænsninger</a></li>
+<li><a href="#motivation">Motivation</a></li>
+</ul>
+</nav>
+<p><strong>Copyright</strong></p>
+<p>Copyright har ingen eksistensberettigelse i Islam. Denne bog kan frit citeres, kopieres, oversættes og trykkes uden tilladelse. I overensstemmelse med god islamisk skik vil en henvisning til forfatteren værdsættes såfremt materialet bruges.</p>
+<p><strong>Forkortelser</strong></p>
+<ul>
+<li>(swt): سبحانه وتعالى (Subhannahu wa ta ala). Det betyder “priset og ophøjet er Han” og det bruges til at prise Allah, når Han nævnes.</li>
+<li>(saaws): صلى الله عليه وسلم (Sala Allahu alay-hi wa-sallam). Det betyder “må Allah vise ham ære og skænke ham freden”. Det bruges når man nævner Profeten Muhammad eller andre profeter.</li>
+<li>(raa): رضي الله عنه (Radhi Allahu anhu). Det betyder “må Allah være tilfreds med ham”. Det bruges når man nævner en af Profetens Sahabah.</li>
+<li>(rha): رحمه الله (Rahimahullah). Det betyder “må Allah være barmhjertig imod ham”. Det bruges når man nævner en muslim, der er gået bort.</li>
+<li>(Bukhari): Henviser til hadithsamlingen “Sahih al-Bukhari”, samlet af Imam Bukhari (d. 256 AH., 870 E.V.T.)</li>
+<li>(Muslim): Henviser til hadithsamlingen “Sahih Muslim”, samlet af Muslim bin al-Hajjaj (d. 261 AH., 875 E.V.T.)</li>
+</ul>
+<h1 id="indledning">Indledning</h1>
+<p><strong>(I Allahs navn, den Nådige, den Barmhjertige) بسم الله الرحمن الرحيم</strong></p>
+<p>Al pris og taknemmelighed tilkommer alene Allah, vi priser Ham, og søger Hans hjælp og tilgivelse. Vi søger tilflugt hos Allah imod vores egen ondskab, og imod det onde fra vore handlinger. Den som Allah retleder, kan ingen vildlede, og den som Allah vildleder, kan ingen retlede. Jeg bærer vidnesbyrd om at ingen har ret til tilbedelse eller underkastelse foruden Allah, alene, og jeg bærer vidnesbyrd om at Muhammad (saaws) er Hans Tjener og sidste Sendebud.</p>
+<p>“Optimal” handler om at identificere dine begrænsninger, både dem der er pålagt dig udefra, og dem du pålægger dig selv, og at identificere dine realistiske muligheder, for derefter at leve optimalt ud fra en islamisk synsvinkel.</p>
+<h1 id="tænkning-og-opfattelser">Tænkning og opfattelser</h1>
+<p>Som mennesker er vi underlagt en hel del begrænsninger der går ud over vores kontrol, men på trods af dette så er de begrænsninger der virkelig forhindre os i at leve optimalt, ofte begrænsninger vi lægger på os selv, bevidst og ubevidst.</p>
+<p>Vi er fysisk begrænsede af de naturlove som Allah (swt) har iværksat. Dette betyder f.eks. at vi ikke kan forhindre, at vi bliver ældre, og at vore kroppe langsomt, men sikkert, svækkes. Vores fysiske formåen, vores udseende, vores helbred, er alt sammen underlagt begrænsninger som vi ikke har nogen indflydelse på.</p>
+<p>Vi er også mentalt begrænsede af de tanker og opfattelser som vi bærer på, og hvis du på en eller anden måde i din daglige tankegang siger til dig selv, at du ikke kan et eller andet, af en eller anden grund, så opbygger du en stærk psykisk og fysisk barriere imod dig selv.</p>
+<p>Hvis du f.eks. mener at du er ubegavet, doven, dårlig til at huske, uintelligent, grim, for gammel, for syg, at du har spildt dit liv, og din tid til ændring er forbi, eller noget andet negativt, så vil en sådan negativ opfattelse begrænse dig på måder du end ikke kan forestille dig.</p>
+<p>Årevis af erfaringer har måske ikke alene opbygget bestemte opfattelser hos dig, men har måske sågar bekræftet sådanne opfattelser igen og igen så det er blevet til rodfæstede overbevisninger, overbevisninger som du ser anledning til at betvivle.</p>
+<p>Vi kan som mennesker gå rundt med et hav af forhindringer som vi selv har sat op, men som vi ikke ved hvordan virker i vores liv.</p>
+<p>Urealistiske forventninger til dine egne evner og kunnen er også begrænsninger. Dette skyldes at urealistiske forventninger ofte leder os ad forkerte stier i søgen efter ting som vi aldrig kan opnå, og dermed begrænses vi i de ting som vi kunne have opnået i stedet for.</p>
+<p>Det er derfor vigtigt at vi opbygger korrekte opfattelser om os selv, hvilket betyder at: <strong>De tanker vi gør os, om os selv, skal udelukkende tage udgangspunkt i faktiske data baseret på en objektiv bedømmelse af realiteten.</strong></p>
+<p>At leve optimalt handler om at kunne identificere dine begrænsninger korrekt, og at udnytte dine muligheder og dit potentiale til fulde.</p>
+<p>En korrekt identifikation af dine begrænsninger betyder ikke alene at du finder ud af hvilke opfattelser du bærer rundt på, der er forkerte, det betyder også at du finder ud af hvilke former for undskyldninger du giver dig selv, for ikke at udnytte det liv, som Allah (swt) har givet dig, fuldt ud.</p>
+<p>Det lyder måske svært, men det er det ikke. Det kræver ikke at du læser tykke selvhjælpsbøger, og udfylder massevis af spørgeskemaer, det kræver blot at du ser dig selv i øjnene, og er 100 % ærlig overfor dig selv.</p>
+<h1 id="metoden">Metoden</h1>
+<p>Lad mig starte med at sige at hvis du selv mener, at du lever optimalt, trods de begrænsninger du eventuelt måtte have, og dermed heller ikke ønsker de store forandringer i dit liv, så er dette hæfte ikke skrevet til dig. Hvis du derimod mener, føler og ønsker, at du kunne leve dit liv bedre, og at det potentiale Allah (swt) har givet dig, ikke bliver udnyttet til sit fulde, så er dette hæfte skrevet til dig.</p>
+<p>Lad mig derefter sige at du kan have oplevet hundredevis af negative ting i dit liv, der alle har haft en negativ indflydelse på dig, og som i dag synes, at ligge til grund for at du ikke lever dit liv optimalt. Måske har du været udsat for vold, måske har du været udsat for fysisk eller psykisk svigt, måske lider du af ensomhed, måske lever du i et elendigt ægteskab, måske er du økonomisk begrænset, måske behandler din familie dig dårligt, måske behandler dine venner dig dårligt, osv. Alle sådanne ting medfører negative følelser i kroppen, og du kan være ulykkelig eller fyldt med sorg eller vrede, men du skal forstå en vigtig ting korrekt med det samme, det er ikke disse ting der forhindrer dig i at leve optimalt. Det er dig selv!</p>
+<p>Mennesker der udnytter deres potentiale optimalt, og mennesker der opnår store og fantastiske ting, er ikke mennesker der er specielt bedre stillet end dig, det er mennesker der har identificeret deres begrænsninger korrekt, og derefter har besluttet, at de reelle begrænsninger de har i deres liv, ikke må ligge til hindring for at opnå det som de ønsker. Alle mennesker, uden undtagelse, vil i dette liv opleve negative ting.</p>
+<p>Det er derfor essentielt at vi identificerer og definerer vores reelle og virkelige begrænsninger, de begrænsninger som vi virkelig ikke kan ændre på, for derefter at indrette vores liv på en måde, hvor disse begrænsninger ikke udgør en større barriere end de virkelig er. Dernæst at vi identificerer og definerer vores “fiktive” begrænsninger, og eliminerer dem totalt fra vores liv.</p>
+<p>Profeten Muhammad (saaws), der var Allahs mest elskede menneske, oplevede svigt, sorg og nød af den værste form. Alligevel, og på trods af dette, så levede han (saaws) uden tvivl det mest optimale liv i relation til både denne verden og den Kommende.</p>
+<p>Begge Profetens (saaws) forældre døde da han (saaws) var lille. Alle hans (saaws) sønner døde mens de kun var små. Og alle hans (saaws) døtre døde i hans livstid, pånær Fatima (raa). Han (saaws) mistede sin elskede kone Khadijah (raa), og han mistede sine to elskede onkler Hamza (raa) og Abu Talib, hvor specielt Hamzas død var meget hård for ham. De fleste af hans familiemedlemmer behandlede ham (saaws) som en gal mand, og de tøvede ikke med være efter ham dag og nat. De spredte falske rygter om ham til alle der kom for at besøge Mekka. Mange af hans (saaws) elskede sahaba (raa), der samtidig var hans bedste venner, blev dræbt eller tortureret. Og han (saaws) led selv under voldsom boykot, mishandling, vold og hård sygdom.</p>
+<p>Mange mennesker spørger hvordan det kan være at Allah (swt) lod Sin elskede Profet (saaws) opleve alle disse hårde og ulykkelige ting. Svaret er at en af grundene er for vores skyld. Så vi kan se at livet i denne verden er ikke ment til at være et liv i nydelse uden modgang. Livet i denne verden er en test, en test der skal bestås for, at vi kan få adgang til Paradis. Livet i Paradis er derimod et liv i ren nydelse uden den mindste modgang. Og Profeten (saaws) viser os, igennem sit eget liv, hvordan vi skal bestå prøven ved ikke at lade disse problemer forhindre os i at leve optimalt.</p>
+<p>Hertil siger Allah (swt): “<strong>I har visselig i Allahs Sendebud det bedste eksempel at følge for enhver der har håb i Allah og den Sidste Dag, og som ihukommer Allah meget.</strong>” (33:21).</p>
+<p>De fleste selvhjælpsbøger og bøger om personlig udvikling snakker om at sætte mål og delmål, dernæst om at udvikle planer med datoer, dernæst om at kontrollere disse planer for fejl og mangler løbende, osv. Alt sammen irrelevante og unødvendigt komplicerede metoder der ikke bærer frugt.</p>
+<p>Grunden til at disse ting ikke virker skyldes, at det ikke er sådan livet fungerer. Vi er ikke skabt til at leve sådan, og der er alt for mange faktorer, selv små faktorer, som vi ikke har kontrol over, og som hver eneste dag er med til at modarbejde og ødelægge vores planer. Og jo mere vi kan se at det er svært at nå vores mål, desto mere fyldes vi med håbløshed, og endeløs selvbebrejdelse.</p>
+<p>Hvis du en aften sidder i din stue, og der pludselig kommer en gal bi ind gennem dit vindue, hvad gør du så? Begynder du at lægge avancerede planer på et stykke papir med specificerede mål, delmål og tidsskema for at få gjort kål på bien? Nej, det er ikke nødvendigt. Måske henter du fluesmækkeren og smækker bien. Måske er du mere venlig mod bien, og hjælper den ud igen ved først at fange den i et glas. Pointen er at opgaven er simpel at løse, den kræver ikke planlægning.</p>
+<p>Fakta er at de fleste mål i livet ikke kræver den store planlægning. De kræver blot handling!</p>
+<p>Og her kommer en detalje der er vigtig at forstå: <strong>En korrekt identifikation af begrænsninger og muligheder er direkte proportionelt med den fysiske aktivitet du kan og skal udføre for at opnå et mål, og for at leve optimalt!</strong></p>
+<p>Hvad betyder det så lige?</p>
+<p>Det betyder at det er først når du virkelig har identificeret alle dine virkelige begrænsninger og alle dine virkelige muligheder korrekt, at du kan udføre de fysiske aktiviteter der fører til målet. Til gengæld er det derefter forholdsvis simpelt. Det kræver blot vedholdende handling. Samtidig betyder det også at det samme mål kan opnås på varieret tid og med varieret indsats, og dette er en stor fordel. I mange tilfælde kan du faktisk gøre en indsats uden at du lægger ret meget mærke til det.</p>
+<p>Lad os tage et konkret og meget simpelt eksempel og sige at du har det mål, at du gerne vil lære en eller anden surah udenad.</p>
+<p>Du kan lave en plan over hvor meget du skal læse hver dag, og i hvor lang tid. Og du kan lave en plan over hvor meget af surahen du skal have opnået at kunne udenad indenfor en given tidsramme. Dertil kan du planlægge hvad du skal gøre, hvis du fejler osv. Dernæst begynder du så at øve dig, og du gentager et vers af gangen for dig selv. Dernæst kan du så få dårlig samvittighed hvis du ikke opnår dit mål, eller hvis du er for længe om det i henhold til din plan, eller hvis du finder at du tit springer din plan over, og laver noget helt andet. Måske synes du så ikke at du gør nok, og hvis du også sammenligner dig selv med andre, så synes du måske er du er ret elendig til det. Det kan også være at din konklusion er at du er dårlig til at huske. Måske glemmer du begyndelsen af surahen når du endelig har lært slutningen. Måske giver du op og forsøger aldrig nogen sinde igen at lære en ny surah udenad, og dit syn på dig selv har samtidig måske også rodfæstet en ny opfattelse af, at du er useriøs eller doven.</p>
+<p>På den anden side kunne du gøre noget helt andet ved blot at handle. Ingen planer, ingen vurderinger, ingen datobaserede målsætninger, intet af dette. Hver gang du skal bede hjemme, holder du Koranen i hånden, og du læser nu den surah du ønsker at lære udenad, eller en del af den, i hver eneste salah. Indtil du kan den.</p>
+<p>Og her kommer en anden meget vigtig ting at forstå: <strong>Hvis du bliver ved med at gøre det du plejer at gøre, så bliver resultatet også som det plejer!</strong></p>
+<p>Kernen i alt dette er at du skal handle, og hvis de handlinger du plejer at udføre, ikke giver dig de resultater du ønsker, skal du udføre nogle andre handlinger. Det kan føles svært, eller det kan føles let. Det kan måske gøres hurtigt, eller det kan tage lang tid. Intet af dette er relevant! Det eneste der er relevant, er en fast beslutning og handling.</p>
+<p>Hvis du ryger, og gerne vil stoppe med at ryge, så STOP! Intet andet. Bare stop!</p>
+<p>Hvis du er overvægtig og gerne vil tabe dig, så STOP med at leve usundt og/eller spise for meget. Intet andet. Bare stop! Jo, løsningen er virkelig så simpel! Spis kun det du skal spise, når du skal spise, og spis ikke andet.</p>
+<p>Nu sidder du måske og siger: “Tror du ikke at alle ville gøre det hvis det var så let?”</p>
+<p>Fakta er at det virkelig er helt og totalt irrelevant, om det er let eller ej. Enten så ønsker du at opnå et mål, eller også drømmer du kun. Hvis du virkelig ønsker at opnå et mål, og hvis det virkelig er vigtigt for dig, så gør du også alt det du skal gøre for at opnå målet.</p>
+<p>Fakta: <strong>Når vi ikke gør det et mål kræver af os, og derfor ikke opnår målet, så er det udelukkende fordi vi ikke virkelig ønsker målet!</strong></p>
+<p>Hvis der ikke findes en udefra kommende indflydelse, som tvinger dig væk fra dit mål, altså med virkelig tvang. Så er det eneste der afholder dig fra at opnå et mål, dig selv. Det er meget vigtigt at du tænker dybt over dette. At drømme og at ønske er ikke det samme!</p>
+<p>Jeg kan drømme at jeg er Supermand, men jeg kan ikke ønske at være Supermand, fordi det fysisk ikke kan lade sig gøre. Selv hvis jeg brændende “ønsker” at være Supermand, så er det ikke et virkelig ønske, det er ikke virkelig et mål, det er udelukkende en fantasi. Det har ingen realitet. Lige meget hvad jeg kalder det, så er og bliver det en helt irrelevant fantasi.</p>
+<p>Hvis jeg siger, at jeg ønsker at stoppe med at ryge, men ikke stopper, men derimod bliver ved med at ryge, bliver ved med at falde tilbage til at ryge, så ønsker jeg ikke at stoppe med at ryge, det er udelukkende en fantasi at stoppe med at ryge.</p>
+<p>Hvis jeg siger, at jeg ønsker at tabe mig, men vedbliver med at leve usundt, så ønsker jeg ikke at tabe mig, men drømmer kun om det, det er udelukkende en fantasi.</p>
+<p>Fakta er at når vi havner i en katastrofe eller nødssituation, hvor alvoren virkelig går op for os, så ikke alene træffer vi en fuld og fast beslutning, vi handler fuldt ud på det niveau der skal til for at opnå vores mål.</p>
+<p>Selv hvis du er stresset fordi du f.eks. er meget ked af dit liv af forskellige reelle årsager, og denne stress forårsager en forøgelse af stresshormon og dermed også hormonet insulin, hvilket giver ustabilt blodsukker og dermed trang til at spise og trang til søde sager, så er og bliver det dig der bestemmer, hvornår og hvor meget du spiser. Der er ingen der propper noget ned i halsen på dig.</p>
+<p>Hvis du siger noget i stil med: “Jamen, jeg har haft en hård barndom, og jeg lærte at finde trøst i mad, så den dag i dag trøstespiser jeg når jeg er ked af det, og jeg har et dårligt forhold til min kone, og min familie hader mig, og min økonomi er i ruiner. Jeg sidder foran computeren og ser serier, og spiser, og det er den eneste glæde i livet jeg har! Du ved vist ikke hvor svært det er!”</p>
+<p>Så skal du vide og forstå det meget vigtige faktum, der er 100 % sandt, <strong>at når et menneske virkelig ønsker forandring, så frembringer det forandring!</strong> Så længe mennesket ikke er underlagt tvangsforhold, enten via naturlove eller udefra kommende påvirkninger, og her taler vi om f.eks. fængsling, indespærring, og andre forfærdelige forhold som man på ingen måde kan ændre på, så er og bliver det mennesket selv der bestemmer alle de ting, som mennesket har 100 % kontrol over.</p>
+<p>Hvis du ikke er enig i dette, så hold en pause fra at læse et øjeblik, og tænk dig godt om. Du vil finde at det er sandt.</p>
+<p>Beviset på ovenstående fakta findes i realiteten, og det er et absolut bevis. Beviset findes også i Koranen, hvor Allah (swt) først løfter forbuddet om at spise de forbudte ting, når forholdene er sådanne, at der rent fysisk er tale om tvang for at overleve. Dette betyder at indtil tvangssituationen rammer dig, så skal du bide situationen i dig og gøre dit yderste for at forbedre din situation - altså for at nå dit mål.</p>
+<p>Uanset hvor trist du er, og uanset hvor elendigt dit liv rent faktisk er, så er og bliver det dig der bestemmer, om du skal ryge, og hvor meget og hvordan du spiser, hvem du skal tilbringe tiden med, osv.</p>
+<p>Fakta: <strong>Det er dig der bestemmer, indenfor de rammer af ting som du rent faktisk har indflydelse på, hvordan du lever.</strong></p>
+<p>Som nævnt i starten af bogen handler “Optimal” om at identificere dine begrænsninger, både dem der er pålagt dig udefra, og dem du pålægger dig selv, og at identificere dine realistiske muligheder, for derefter at leve optimalt ud fra en islamisk synsvinkel.</p>
+<p>Derfor må du se i øjnene, at en del af dig måske ikke virkelig ønsker forandring. Eller sagt med andre ord så ønsker du det måske ikke nok. Lad ikke en sådan eventuel konstatering udgøre en negativ konstatering, lad det blot udgøre en konstatering.</p>
+<p>Lad os starte med at prøve at identificere de begrænsninger du lægger på dig selv. De begræsninger der i virkeligheden ikke udgør reelle begræsninger.</p>
+<p>Det kræver at du tænker dig rigtigt godt om. Måske kan du ikke gøre det her og nu, men vil opleve at du igennem de næste par dage, efterhånden som du overvejer dine forhold og dit liv, kommer i tanke om flere og flere ting.</p>
+<p>Start med at lave en liste med alle de ting du virkelig og alvorligt ønsker at opnå. Du kan med fordel skrive listen ned så du ikke skal bruge tid og energi på at huske på flere forskellige ting.</p>
+<p>Listen kunne f.eks. se sådan ud:</p>
+<p>Jeg, (indsæt dit navn), ønsker at opnå følgende ting:</p>
+<ul>
+<li>Stoppe med at ryge.</li>
+<li>Tabe mig.</li>
+<li>Skrive en bog.</li>
+<li>Tage en uddannelse.</li>
+<li>Få et godt ægteskab.</li>
+<li>Bruge mere tid med mine børn.</li>
+<li>Lære arabisk.</li>
+</ul>
+<p>Sørg for at din liste kun indeholder ting du virkelig ønsker.</p>
+<p>Spørg nu dig selv, helt konkret, hvorfor du ikke er ærlig overfor dig selv!</p>
+<p>Nej, du ønsker ikke disse ting, uanset hvor meget du end påstår det, hvis du bliver ved med at ryge, bliver ved med at leve usundt, ikke er begyndt at skrive din bog, ikke er begyndt på uddannelsen, ikke bruger mere tid på dine børn, ikke undersøger hvad et godt ægteskab kræver af dig, og ikke studerer arabisk.</p>
+<p>Vær bundærlig overfor dig selv nu og se det i øjnene! Du drømmer om disse ting, men du ønsker dem ikke - ikke virkelig!</p>
+<p>Fakta: <strong>Hvis du virkelig ønsker at opnå noget, og du ikke bliver forhindret med nogen form for påført tvang udefra, så kan intet stoppe dig!</strong></p>
+<p>Nu siger du måske: “Jeg mener selv at jeg ønsker disse ting! Jeg synes bare det er voldsomt svært, og flere af disse ting ved jeg ikke hvordan man opnår.”</p>
+<p>En sådan udtalelse viser og bekræfter at du ikke har fået identificeret dine virkelige begrænsninger og muligheder. Du lader fiktive begrænsninger stoppe dig.</p>
+<p>De ting som du ikke ved hvordan du opnår, undersøger du hvordan man opnår, så du kan opnå dem. Og de ting som er voldsomt svære at gøre, gør du alligevel, selvom det er svært - hvis du altså <strong>virkelig</strong> ønsker dem.</p>
+<p>Tag den vigtigste ting på listen for dig. Hvis denne ting kræver viden, så find computeren frem og søg efter denne viden, find relevante bøger, foredrag og artikler. Hvis du har råd til det kan du sågar ansætte en ekspert til at hjælpe dig. Find andre der har haft samme problemstilling som dig, og som har løst problemet, og find ud af hvad de har gjort. Dernæst handl! Tag det første skridt, dernæst det næste skridt, og gå målrettet mod dit mål uden at stoppe frivilligt. Måske kræver et mål at du selv bliver en form for ekspert, men så er dette “trin” en del af målet. Og hvis du har et mål der kan opnås ad forskellige veje, så bliver en del af målet at finde ud af, måske igennem forsøg, hvilken metode der virker bedst for dig. Så bliver dette “trin” en del af målet.</p>
+<p>Uanset hvad du ønsker. Om du ønsker at blive god til noget, eller at lære noget nyt, eller at stoppe med noget uhensigtsmæssigt, så stop med at spilde tiden på irrelevante ting. Lad være med at spilde tiden på computerspil. Lad være med at spilde tiden på film og serier. Lad være med spilde tiden ved at “hænge ud med venner”. Brug så meget tid som du overhovedet orker på det som du gerne vil opnå. Brug kun tid på andre ting når det er strengt nødvendigt. Slap af når det er nødvendigt, vær sammen med familien når det er nødvendigt, søg risq når det er nødvendigt, men brug resten af tiden, uanset hvor meget det er, på det som du gerne vil opnå, og stop alt andet, og stop med det som du finder uhensigtsmæssigt.</p>
+<p>Det kræver ingen besværlig planlægning, ingen analyse, og ingen datobaserede målsætninger. Og det kræver ingen ændring i din psykiske tilstand, derimod vil det med garanti forårsage en ændring i din psykiske tilstand. Bare stop med det du skal stoppe med, og gør det som du skal gøre, så meget som det er nødvendigt. Ikke andet!</p>
+<p>Lad være med at finde på undskyldninger eller betingelser som f.eks. “Jeg skal først lige have styr på X før jeg kan gå i gang med Y”. Der er ikke noget du først lige skal have styr på. Hvis der virkelig findes en ægte begrænsning der forhindrer dig i at opnå noget, og du identificerer denne begrænsning som noget du kan gøre noget ved, så er dette et mål i sig selv. Hvis begrænsningen derimod er noget der er underlagt dig udefra, og som du ikke kan ændre på, så er det en fantasi så længe forholdene gør sig gældende, og du spilder din tid ved at fokusere på det.</p>
+<p>Arbejd med de ting du har indflydelse på, og accepter at der er andre ting som du ikke har indflydelse på, omend det er midlertidigt eller permanent.</p>
+<h1 id="identifikation-af-ønsker-og-begrænsninger">Identifikation af ønsker og begrænsninger</h1>
+<p>Desværre er det muligt at have modsatrettede ønsker, altså ønsker der modarbejder hinanden.</p>
+<p>Hvis jeg på den ene side virkelig ønsker at tabe mig, og jeg på den anden side virkelig elsker at spise masser af slik og kage hver dag, så har jeg modsatrettede ønsker fordi disse ting modarbejder hinanden. Jeg vil gerne tabe mig, men jeg vil også spise masser af slik og kager. Her er tale om to forskellige ønsker der modarbejder hinanden.</p>
+<p>Fakta: <strong>Det ønske der har den stærkeste motivation vinder altid!</strong></p>
+<p>Motivation kan opdeles i psykisk motivation og fysisk motivation.</p>
+<p>Psykisk motivation er den type motivation du giver dig selv ved at forestille dig dit mål, ved at se andre der har nået det, som du også gerne vil nå, og ved at se på det modsatte af at nå dit mål, konsekvenserne. Psykisk motivation er 100 % underlagt din kontrol. Psykisk motivation er et direkte resultat af provokation af instinkterne. Denne provokation kan både være forestillet eller virkelig, og du har mulighed for at arbejde med den.</p>
+<p>Fysisk motivation kommer indefra, og den kan både være tvunget over dig, og den kan også være selvforskyldt. Hvis den fysiske motivation er en naturlov, som f.eks. sult fordi du skal spise for at overleve, så har du ingen mulighed for at kontrollere denne, og den er ikke relevant for emnet overhovedet. Fysisk motivation i form af naturlove er nødvendige for at kunne eksistere i denne verden. Hvis den fysiske motivation derimod ikke er en naturlov, men er resultatet af din levevis, som f.eks. rygetrang på grund af afhængighed, eller trang til søde sager på grund af stress, så er det dig der bestemmer, om du vil underkaste dig motivationen eller ej. Ja, det kan være vanvittig svært at modarbejde den, men fakta er at det er og bliver dig, der bestemmer.</p>
+<p>Du skal identificere dine ønsker, og dernæst se på om du har modarbejdende ønsker. Det letteste er at identificere dine “normale” ønsker først, og derefter at identificere eventuelt modarbejdende ønsker.</p>
+<p>Hvis du finder, at du har modarbejdende ønsker, skal du være 100 % ærlig overfor dig selv, og erkende disse. Dernæst skal du se i øjnene at indtil nu, så kan det være at et eventuelt modarbejdende ønske har været stærkest, eller simpelthen blot har udgjort den mindste modstand eller besværlighed.</p>
+<p>Fakta: <strong>Som mennesker vælger vi ofte det der er lettest, fremfor det vi virkelig ønsker.</strong></p>
+<p>Dette faktum skyldes den natur vi er skabt i, og det at Allah (swt) har gjort dette liv til en test og en prøve. Vi er skabt til at leve i Paradis, hvor evig nydelse uden modstand finder sted. Men før vi kan nå dette mål, skal vi testes, og denne test betyder at vi skal bevise, overfor vores Skaber, at vi er villige til at yde en ekstra indsats, villige til at gøre det rigtige, og villige til at leve optimalt, også selvom det nogle gange er meget svært. Det er prisen for succes i denne verden og i den Kommende.</p>
+<p>Lad være med at dømme dig selv. Lad være med at sætte “mærkater” på dig selv. Mærkater i form af selvkritik er ikke relevant overhovedet. Om nogle mennesker kalder en bestemt adfærd for dovenskab, eller svaghed, eller noget andet er total irrelevant. Det eneste du skal gøre er at identificere alle dine ønsker, også dem der modarbejder andre af dine ønsker.</p>
+<p>Hvis jeg virkelig ønsker at tabe mig, men samtidig også virkelig elsker at spise masser af slik og kage hver dag, og slik og kage indtil nu har vundet, og samtidig også har været den direkte årsag til at mit ønske om at tabe mig, ikke har vundet, så kan jeg bestemme hvilke af disse to ting jeg ønsker mest. Det som jeg ønsker mest er det som jeg vælger at fuldføre, mens det andet skal blive totalt elimineret.</p>
+<p>Elimination af et ønske eller en uhensigtsmæssig adfærd kan finde sted på to effektive måder. Den simpleste måde er at du blot vælger at fravælge det, du træffer en fuld og fast beslutning. Den anden måde, der ofte er den bedste måde, handler om at du udskyder det uhensigtsmæssige til det Kommende liv. Dette bygger på at du forstår at det udelukkende er et spørgsmål om tid, så er det muligt at nyde begge ønsker fuldt ud inshAllah, uden at de modarbejder hinanden. Du skal blot udskyde det ene ønske til det Kommende liv inshAllah. Der er dermed kun tale om en midlertidig udskydelse.</p>
+<p>Så jeg vælger f.eks. at tabe mig, og afholde mig fra slik og kage, fordi det at tabe mig her og nu har en større værdi for mig, ikke kun i dette liv, men også i det Kommende liv. Hvis jeg taber mig, får jeg det bedre med mig selv rent fysisk, jeg får mere energi til at gøre gode ting, og jeg bliver i stand til at gøre nogle ting som jeg ellers ikke kunne gøre. Dette betyder også mere belønning i det Kommende liv inshAllah. Ønsket om at tabe mig skal således have en højere prioritet end ønsket om at spise masser af slik og kage. Dernæst ved jeg at man i Paradis kan spise alt det man har lyst til, uden bekymringer om helbred, overvægt, og andre negative konsekvenser, så jeg udskyder det at spise masser af slik og kage indtil jeg modtager Paradiset inshAllah.</p>
+<p>Nu kan jeg prioritere imellem mine modarbejderende ønsker på en rationel vis, fremfor at lade tilfældige lyster drive mig. Jeg har nu truffet en rationel og bevidst beslutning om at handle helt modsat det jeg plejer. Samtidig har jeg frembragt en psykisk motivation der er stærk. Dels ved at forestille mig resultatet af at tabe mig, og dels ved at forestille mig at jeg i Paradis spiser alt det jeg har lyst til af slik og kage.</p>
+<p>En vigtig ting at finde ud af er også om dine ønsker virkelig er dine egne. De skal ikke være påduttet dig af dine forældre, af samfundet eller af nogen som helst andre. Måske ønsker du f.eks. ikke selv at tabe dig, og befinder dig godt med dig selv, men fordi andre siger at du er tyk, eller der er noget andet galt med dig, så tror du at du ønsker ændring.</p>
+<p>Find ud af hvad dine ønsker virkelig er. Dem alle sammen. Ikke dine fantasier, kun dine ønsker. Hvad ville du ændre på i dit liv, hvis du kunne? Hvad vil du gerne have? Hvad ønsker du dig virkelig?</p>
+<p>Lad os nu tage et kig på identifikation af virkelige begrænsninger.</p>
+<p>Måske synes du ikke at du lever op til dit fulde potentiale, og måske mener du at du kunne gøre mere og opnå mere. Men er du sikker på at dette er korrekt? Hvordan finder du ud af hvad der udgør dit fulde potentiale? Og hvad er virkelige begrænsninger når det kommer til dine ønsker?</p>
+<p>Du skal ikke sammenligne dig selv med andre mennesker. Vi er alle sammen unikke, og Allah (swt) har skænket os forskellige kompetencer, muligheder og potentialer. Hvis du sammenligner dig selv med andre for at frembringe motivation til at gøre mere, så kan en sådan sammenligning være brugbar og positiv, men alt andet er både forkert og irrelevant.</p>
+<p>Det relevante er at finde ud af hvad du kan gøre, ikke hvad andre gør, og da slet ikke at sammenligne dig selv med andre. Allah (swt) vil bedømme din indsats i forhold til dine unikke forhold, ikke i forhold til andre mennesker og deres forhold og indsats.</p>
+<p>Du kan finde en meget rig person donere en million kroner til velgørende formål, men hans belønning, og det han opnår af godt, er mindre end en anden person der kun giver hundrede kroner til det helt samme formål. Den rige person er så rig at det at give en million ikke betyder noget fordi han allerede har to hundrede milliarder, mens den anden person er ekstrem fattig, og det at give hundrede kroner væk svarer til hvis den rige person gav alle sine penge væk.</p>
+<p>På samme måde gælder det med fysisk styrke, mental kapacitet, økonomiske forhold, sociale forhold, og alle andre forhold.</p>
+<p>Omstændigheder vi ikke kender til kan ligge bag andre menneskers succes og formåen, og vi må derfor aldrig sammenligne os selv med andre til andet end at frembringe en form for motivation.</p>
+<p>Vi kan være begrænsede af fysiske omstændigheder som f.eks. sygdom, alderdom, levevilkår, naturkatastrofer, o.a. Men vi kan også være begrænsede af vore egne opfattelser, hvilket vi ofte er.</p>
+<p>Det er vigtigt at vi identificerer alle vore begrænsninger korrekt. Og dette er faktisk den vanskeligste del, fordi vi ofte ikke er bevidste om, hvilke muligheder vi i virkeligheden har.</p>
+<p>Selv under de mest kummerlige forhold, hvor naturkatastrofer og dårlige vilkår gør sig gældende, er det vigtigt at finde ud af om vi har nogle muligheder, som vi ikke har opdaget.</p>
+<p>Uanset hvor dårlige vores forhold er, så kan de blive forbedret meget hurtigt, faktisk næsten som et blink med øjet, hvis Allah (swt) kommer til undsætning og hjælper. Og vi er altid totalt afhængige af Allah (swt). Dette betyder også at vi ved, at der sammen med vores egen energi, er en Ubegrænset energi, der hvis Allah (swt) ønsker det, kan ændre på alting.</p>
+<p>Allah (swt) siger: “<strong>Du ved det ikke, men Allah kan meget vel forårsage at noget nyt sker.</strong>” (65:1). Og Allah (swt) siger: “<strong>Hvis Allah hjælper jer, er der ingen der kan få magt over jer, men hvis Han forlader jer, hvem skal da hjælpe jer efter Ham? Og lad de der har iman stole på Allah.</strong>” (3:160).</p>
+<p>Hvis du virkelig er 100 % overbevist om at et bestemt mål er helt umuligt at opnå, så betyder det at du stopper enhver aktivitet, og du giver helt op. Et håb om succes, og en realistisk tro på succes, er vigtig for uden disse to ting, så ophører enhver aktivitet.</p>
+<p>Samtidig giver håb i Allah (swt) noget ekstra som “almindelige mennesker” ikke har. Håb i Allah (swt) betyder at du ved, at selv hvis dine egne midler og muligheder er begrænsede, og dermed måske kan udgøre en hindring til at nå dit mål, så sætter du din lid til Den Almægtige, hvis midler og muligheder er totalt ubegrænsede, og hvis Han (swt) hjælper dig, så kan du gøre ting og opnå mål, der er helt ud over hvad dine egne midler og muligheder ellers giver anledning til. Og Koranen er fyldt med eksempler på dette.</p>
+<p>Det berettes fra Abu Hurairah (raa) at Profeten (saaws) sagde: “<em>Den stærke mumin er bedre og mere elsket af Allah end den svage mumin, selvom de begge er gode. Stræb efter det der vil gavne jer og søg Allahs hjælp og vær ikke håbløse. Hvis noget træffer jer, så sig ikke: ‘Hvis bare jeg havde gjort sådan og sådan, så ville det ikke være sket.’, men sig i stedet, ‘Allah bestemmer og hvad Han vil, det gør Han’, for ordene ‘hvis bare’ åbner døren for Satan.</em>” (Muslim).</p>
+<p>Ibn al-Qayyim (rha) sagde:</p>
+<blockquote>
+<p>Denne hadith indeholder flere vigtige punkter angående iman, bl.a. følgende: At en persons lykke ligger i at søge efter det, der vil gavne ham i dette liv og i det næste, og at denne søgen betyder, at man stræber og yder en indsats, og at man gør sit yderste. Eftersom et menneskes handlinger og stræben udelukkende kan ske med hjælp fra Allah, og igennem Hans vilje og støtte, så har Han befalet at søge Hans hjælp, sådan at han vil handle i overensstemmelse med verset, <strong>Dig alene tilbeder vi, og Dig alene anråber vi om hjælp.</strong> (1:5). Hans stræben efter det der vil gavne ham, er en tilbedelse til Allah der ikke kan udføres undtagen via hjælp fra Ham, så Han befalede ham at tilbede Ham og at søge Hans hjælp.</p>
+</blockquote>
+<blockquote>
+<p>“<em>og vær ikke håbløse</em>”, for at føle sig håbløs er modstridende til at stræbe efter det der vil gavne ham, og det er modstridende til at søge Allahs hjælp. Den der stræber efter det, der vil gavne ham, og som søger Allahs hjælp, er modsat den der føler sig hjælpeløs. Så dette fortæller ham, før det der er fastlagt sker, at den bedste måde at opnå målet på er at stræbe efter det, samtidig med at søge hjælp fra Den i Hvis hånd kontrol over alting ligger.</p>
+</blockquote>
+<p>Og det berettes at Profeten(saaws) sagde: “<em>Allah elsker, når en af jer gør en ting, at han gør det godt.</em>”</p>
+<p>Og Allah (swt) siger: “<strong>Eller tror I at I skal indtræde i Paradis uden at sådanne tests, som ramte dem der kom før jer? De blev testet med voldsom fattigdom og sygdom, og de blev så rystede at selv Sendebuddet og dem der havde Iman sammen med ham sagde: ‘Hvornår kommer Allahs hjælp?’ Jo, visselig er Allahs hjælp nær!</strong>” (2:214).</p>
+<p>I praksis skulle dette betyde at hvis en muslim og en ikke-muslim stræber efter at opnå det samme mål, og de begge har helt identiske muligheder og begrænsninger, så giver ikke-muslimen op før muslimen giver op. Muslimen fortsætter længere, og han eller hun gør mere, fordi personen ved at Allahs (swt) hjælp altid er nær, og at vi via Allahs (swt) hjælp kan opnå ting, som man ikke kan opnå uden Hans (swt) hjælp.</p>
+<p>Hvis vi er ramt at sygdom eller katastrofe, så er det vigtigt at vi enten ser en sådan begrænsning med tilfredshed, selvom vi ikke forstår det gode for os bag den. Og hvis vi ikke kan se på begrænsningen med tilfredshed, så at vi som minimum iværksætter as-sabr. Til dette berettes det at Profeten (saaws) sagde: “<em>Hvis du er i stand til at udvise tilfredshed med iman, så gør det. Hvis ikke, så er der sandelig meget godt i as-sabr overfor det som man hader.</em>” (Tirmidhi). Dernæst lader vi ikke denne sygdom begrænse os mere end det som den rent faktisk giver anledning til. Samtidig underkaster vi os også denne begrænsning uden at forsøge at modarbejde den unaturligt, og uden at betragte dette som noget negativt. Det berettes at Profeten (saaws) sagde: “<em>Forvent godt fordi Allah (swt) gør en mumins sygdom til en soning og en periode med hvile.</em>” (Bukhari). Respekter den begrænsning Allah (swt) har lagt på dig, og vid at den belønning Allah (swt) vil skænke dig som kompensation for den sygdom du har, og de begrænsninger og besværligheder som den giver dig, står i mål med hvad du villet have kunnet opnået, havde du været rask, og højst sandsynligt meget mere end dette. Det berettes at Profeten (saaws) sagde: “<em>Den der går i seng med hensigten om at stå op og bede om natten, men hans øjne overvælder ham, og han (sover) indtil om morgenen, så bliver (belønningen) for det han havde hensigten om at gøre, skrevet for ham, og hans søvn er en gave givet ham fra hans Herre.</em>” (Nasai og Ibn Majah).</p>
+<p>Det berettes fra Jabir bin Abdullah Al-Ansari (raa): Vi var sammen med Profeten (saaws) på en ekspedition hvor han sagde: “<em>Der er nogle mænd i Medina som er med jer, hvorhen I end marcherer, og uanset hvilken dal I krydser. De er ikke fysisk med jer på grund af sygdom.</em>” Og i en anden version sagde han (saaws): “<em>De tager del i belønningen med jer.</em>” (Muslim).</p>
+<p>Dette betyder at hvis du virkelig har til hensigt at udføre en gerning, men ikke kan gøre det på grund af sygdom, så vil du stadig modtage belønningen for at have gjort det.</p>
+<p>Dette passer også overens med en anden beretning, hvor det berettes at Profeten (saaws) sagde: “<em>Når en slave (af Allah) bliver syg eller er på rejse, så modtager han belønningen svarende til det han vil modtage, når han er hjemme, og udfører gode gerninger ved godt helbred.</em>” (Bukhari).</p>
+<p>Når alt dette er sagt, så er spørgsmålet hvor meget en specifik problemstilling rent faktisk begrænser dig, og hvor meget du lader den begrænse dig. Måske kan du ikke gøre præcis det som en rask person ville kunne gøre, hvis du er syg, men måske kan du gøre nogle andre ting, eller de samme ting blot i mindre målestok.</p>
+<p>Nu skal det ikke lyde som om at vi befinder os på et af Danmarks jobcentre, hvor syge mennesker mishandles under utallige arbejdsprøver og evalueringer for at se, om de kan presses via trusler og psykisk stress til at udnytte den 0,1 % arbejdskraft de måske er i besiddelse af, sådan at statskassens udgifter minimeres så meget som overhovedet muligt, mens politikerne selv smovser sig i voldsomme ministerpensioner og andet godt. Det er ikke det der her er tale om. Det der her er tale om er at opnå en positiv indstilling til de muligheder du har, fremfor en negativ indstilling til de begrænsninger du har, uden at dette er relevant på nogen som helst måde for noget andet, end det som du selv ønsker at opnå.</p>
+<p>Hvad enten du lider fysisk eller psykisk, eller begge dele, så spørg dig selv hvad du rent faktisk ville presse dig selv til at gøre under de mest ekstreme forhold du kan forestille dig. Dette betyder ikke at du til dagligt skal presse dig selv til denne maksimale indsats, men det skal give dig et realistisk billede af hvad du i virkeligheden er i stand til, hvis du er nødt til det, og ikke har noget valg. Dette er relevant for hvis vi virkelig ønsker noget, så er vi i stand til at gøre mere end vi selv kan forestille os - hvis bare vi ønsker det nok.</p>
+<p>Fakta: <strong>Når du har et valg, men forbliver passiv, og ikke gør det der skal til, så vælger du den nuværende situation fremfor ændring.</strong></p>
+<p>Måske lider du af en form for social fobi samtidig med at du ønsker at rejse verden rundt og studere forskellige landes kulturer. Det kunne også være noget mere jordnært som det at tage en eller anden uddannelse, eller at deltage i et sprogkursus til et sprog du ønsker at lære. Tanken og forestillingen om de problemer som et sådan “eventyr” vil byde dig grundet din sociale fobi frembringer en endnu større modstand imod eventyret, end den modstand du har imod din nuværende situation. Sagt med andre ord ønsker du det ikke mere end din nuværende situation. Hvis du virkelig ønskede det mere end din nuværende situation, så ville du gøre det, og du ville ikke lade hverken psykisk frygt eller fysiske skavanker holde dig tilbage, hvis du kunne undgå det. Dette er et absolut objektivt faktum du skal se i øjnene og erkende overfor dig selv!</p>
+<p>Det er bl.a. derfor mennesker i ekstreme situationer nogle gange formår at udføre helt fantastiske handlinger. Situationen frembringer så stærke ønsker i personen at han eller hun ikke lader noget som helst holde sig tilbage. Måske springer personen ned i en sø med krokodiller for at redde et andet menneske der er faldet i vandet. Måske sætter nogle brandmænd livet på spild i en bygning der er ved at falde sammen, hvor de er omgivet af flammer, fordi de ønsker at redde de mennesker, der befinder sig inde i bygningen.</p>
+<p>Det hele afhænger af hvor vigtigt det er for dig, at opnå det du ønsker. Alt andet er i virkeligheden blot distraktion, irrelevante undskyldninger, og fantasi, og det er vigtigt at du ikke alene forstår dette, men også erkender dette oprigtigt!</p>
+<p>Igen skal du ikke sætte mærkater på dig selv. Lad være med at tænke at du er en kujon, eller at du er dum, eller at du er X, Y eller Z. Det er kun ignorante politikere der bruger mærkater om andre mennesker. Mærkater er ikke relevante.</p>
+<p>Fakta: <strong>Så længe du ikke lever et liv, hvor du går på kompromis med Allah (swt), så gør du ikke noget forkert!</strong></p>
+<p>At du så ikke lever optimalt, er en anden sag. Og det er op til dig om du vil ændre på det.</p>
+<p>Det eneste du skal gøre er, at erkende den begrænsning du har lagt på dig selv, ved at lade en sygdom, et problem eller en besværlighed holde dig tilbage fra at opnå det du ønsker. Du skal ikke dømme om det er godt eller dårligt, blot erkende situationen.</p>
+<p>Dernæst skal du beslutte dig for om det er sådan du vil fortsætte med at leve, eller om du vil handle anderledes.</p>
+<p>Helt grundlæggende set er modstand imod det vi opfatter som ubehaglige ting, det der ofte holder os tilbage fra at nå vores mål og ønsker.</p>
+<p>Stephen Hawking er fysiker. Han er en velkendt og berømt person i forskellige akademiske kredse, hvor han er medlem af organisationer som f.eks. “Honorary Fellow of the Royal Society of Arts” og “Presidential Medal of Freedom and lifetime member of the Pontifical Academy of Sciences”. Dette er på trods af at han lider af en neurologisk bevægelsessygdom, der ikke alene binder ham til en kørestol, men som også gør at han ikke selv kan spise eller tale uden hjælp fra maskiner. På trods af dette er han en af de mest berømte videnskabsmænd indenfor fysik, og han har udgivet en bunke bøger og populære artikler.</p>
+<p>Helen Keller var både blind og døv. Alligevel blev hun en kendt foredragsholder og aktivist. Hun var den første til at modtage en bachelorgrad i kunst. Hun var også en politisk aktivist og en berømt forfatter i USA. Hun var en af de førende udviklere af American Civil Liberties Union (ACLU).</p>
+<p>John Nash er en kendt amerikansk matematiker der led voldsomt under paranoid skizofreni. Få år efter at have afsluttet det der svarer til gymnasiet, begyndte han at udvikle tegn på skizofreni. Tilstanden fik imidlertid ikke lov til at påvirke hans kærlighed til matematik, og hans arbejde med geometri og differentialligninger betragtes stadig som enestående.</p>
+<p>Marla Runyan blev blind i en alder af 9 år. På trods af dette blev hun 3 gange national mester i 5000 meters løb for kvinder.</p>
+<p>Dashrath Manjhi (1934 - 2007) blev født ind i en fattig arbejderfamilie i byen Gehlaur i Bihar, Indien. Han er kendt som “Bjergmanden” fordi han hakkede en vej igennem et bjerg i Gehlour sådan at hans landsby kunne have lettere adgang til lægebehandling. En dag da Dashrath Manjhis kone, Falguni Devi, skulle over bjerget, faldt hun og kom alvorligt til skade. Den nærmeste by med en læge lå 70 kilometer væk. Dashrath Manjhi blev nødt til at transportere sin kone uden om bjerget, men inden han nåede frem til lægen, døde hun. Dashrath Manjhi besluttede sig for at frembringe en kortere rute ved at udhugge en vej igennem bjerget, hvilket resulterede i at rejsen imellem byerne blev forkortet fra 80 km til 13 km.</p>
+<p>Dashrath Manjhi udhuggede en 109 meter lang og 9,1 meter bred vej igennem bjerget, hvor han arbejdede dag og nat i 22 år uden hjælp af maskiner og under fattige vilkår! Han sagde: “Mens jeg hamrede løs på bjerget sagde folk at jeg var sindssyg, men det styrkede blot min beslutsomhed!”</p>
+<p>Man kan se en kort video af mandens familie, det værktøj han brugte, samt selve vejen han udhuggede på: <a href="https://www.youtube.com/watch?v=xAVUDKw4AIk">YouTube</a></p>
+<p>Så hvilke begrænsninger har du virkelig ud over dem du lægger på dig selv? Og hvad holder dig virkelig tilbage fra at opnå dine ønsker ud over din egen indre modstand imod forandringen?</p>
+<h1 id="motivation">Motivation</h1>
+<p>Det er sjældent at man finder en bog eller et hæfte, der handler om at nå ønsker og mål, uden at emnet om motivation gennemgås på den ene eller den anden måde.</p>
+<p>De fleste bøger og foredrag om motivation er dog irrelevante, og de handler mere om at forfatteren eller foredragsholderen tjener penge, end de virkelig handler om at forstå motivation.</p>
+<p>Fakta: <strong>Motivation er i bund og grund irrelevant!</strong></p>
+<p>Det kan være svært at forstå, og man skal måske have været i en ekstrem situation før man kan se det, men motivation er virkelig irrelevant.</p>
+<p>Nogle mennesker mener at jo mere realistisk et mål ser ud, desto mere motivation opstår der til at nå målet, men dette er en falsk motivation der betyder, at disse mennesker kun ønsker at opnå deres mål, hvis det er let.</p>
+<p>Faktisk forholder det sig sådan, at de fleste fantastiske ting som mennesker har opnået her i livet, er ting der netop har set totalt håbløse og umulige ud, det er derfor de er fantastiske. De mennesker der har opnået disse ting, har ikke ladet sig diktere af motivation eller manglen derpå. De har sat sig for at opnå et mål, og så har de arbejdet mod målet, uafhængigt af om de har været motiverede eller ej.</p>
+<p>Nogle vil så påstå at det at arbejde mod et mål i sig selv ikke kan lade sig gøre uden nogen form for motivation, men det er ikke korrekt. Alt hvad der er påkrævet er den nødvendige energi til at handle, og her mener jeg energi sådan at du kan bevæge din krop fysisk, hvis dit mål kræver bevægelse, og dernæst en beslutning.</p>
+<p>Du kan være både træt og udmattet, ja sågar syg, og have den stærkeste motivation til at lægge dig i din seng, men alligevel tvinge dig selv til at hoppe op på løbebåndet og løbe i en time, ikke fordi du på nogen måde er motiveret af et bestemt mål, men blot fordi du har besluttet, at det er nødvendigt. Du kan sågar hade det, og alligevel gøre det.</p>
+<p>Nogle vil så sige: “Jamen det er netop motivation. Du er træt, og du vil helst sove, men du er motiveret til at træne, af den ene eller den anden grund, det er derfor du træner, trods det at du er træt.”</p>
+<p>Men dette er ikke korrekt. Motivation er en indre drivkraft, energi og lyst til at udføre en bestemt handling. Jeg kan være motiveret til at træne, hvilket betyder at jeg har lyst til at træne. Jo mere motiveret du er til at udføre en given handling, desto mere lyst har du til at gøre det, og desto lettere bliver det.</p>
+<p>Jeg kan have et ønske om at tabe mig og få en pæn og muskuløs krop, men samtidig på ingen måde være motiveret til hverken at træne eller leve sundt. Alligevel gør jeg det, på trods af at jeg ikke har lyst til det, alene fordi jeg har truffet en beslutning.</p>
+<p>Jeg kan afholde mig fra at begå en handling der er haram (forbudt) ved at være motiveret til at få belønning i Paradis og undgå straf i Helvede, men så er min motivation afhængig af dels min evne til at forestille mig belønningen i Paradis og straffen i Helvede, og dels af hvor mange oplysninger jeg har, og hvor friske de er i min hukommelse. Jeg kan også afholde mig fra handlingen alene fordi det er det min Skaber befaler mig, uafhængig af Paradis og Helvede.</p>
+<p>Det hjælper meget at være motiveret når man skal nå sine mål, men det er bestemt ikke en betingelse at være hverken positiv eller negativ motiveret. Alt hvad det kræver er en fast beslutning.</p>
+<p>En beslutning og et ønske er ikke det samme som motivation. Motivation er noget der påvirket af omstændigheder, og de kan ændre sig. En beslutning og et ønske er fast og uforanderligt.</p>
+</body>
+</html>
